@@ -12,7 +12,8 @@ def maximum_length_of_a_concatenated_string_with_unique_characters(
     result = 0
     for i in range(len(arr)):
         for j in range(i + 1, len(arr)):
-            if len(set(arr[i] + arr[j])) == len(ch + arr[j]):
+            ch = ""
+            if len(set(arr[i] + arr[j])) == len(arr[i] + arr[j]):
                 ch = arr[i] + arr[j]
             result = max(result, len(ch))
     return result
